@@ -17,10 +17,19 @@
    * @package OnTheCity
    */
   interface CacheInterface {
+    
+    /**
+     *  Constructor.
+     *
+     * @param array $options The options for the cache.
+     * 
+     */
+    public function __construct($subdomain);
+    
     public function save_data($data); 
     public function get_data();         
     public function expire_cache();
-    public function is_cache_expired();
+    public function is_cache_expired();    
   }
   
 ?>

@@ -1,5 +1,6 @@
 <?php
-  include_once('../cache_interface.php')
+
+  include_once(dirname(__FILE__) . '/../cache_interface.php');
 
 
   /** 
@@ -19,16 +20,19 @@
    * @package OnTheCity
    */
   class JsonCache implements CacheInterface {
-
-
+    
+    // The subdomain to load and store the data for.
+    private $subdomain;
+    
+    
     /**
      *  Constructor.
      *
-     * @param array $options The options for the cache.
+     * @param string $subdomain The church subdomain.
      * 
      */
     public function __construct($subdomain) {
-
+      $this->subdomain = $subdomain;
     }
     
     

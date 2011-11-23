@@ -1,6 +1,6 @@
 <?php
 
-  require_once '../lib/OnTheCity.php';
+  require_once '../lib/on_the_city.php';
 
   /**
    * This is the helper file to include for testing.

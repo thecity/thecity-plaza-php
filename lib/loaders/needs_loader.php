@@ -31,7 +31,7 @@
      * @param string $subdomain The church subdomain.
      */
     public function __construct($subdomain) {
-      $this->url = "http://$subdomain.onthecity.org/plaza/topics?format=json";      
+      $this->url = "http://$subdomain.onthecity.org/plaza/needs?format=json";      
       
       echo "Needs Loader";
     }

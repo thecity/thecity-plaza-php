@@ -23,22 +23,49 @@
     // The subdomain to load the data for.
     private $subdomain;
 
+    // The albums loaded for the subdomain.
+    private $albums;
+    
+    // The events loaded for the subdomain.
+    private $events;
+    
+    // The needs loaded for the subdomain. 
+    private $needs;
+    
+    // The prayers loaded for the subdomain.
+    private $prayers;
+    
+    // The topics loaded for the subdomain. 
     private $topics;
+
+    // The object to store and load the cache.
+    private $cacher;
 
 
     /**
      *  Constructor.
      *
      * @param string $subdomain The church subdomain.
+     * @param boolean $cache_data Cache the data. Default true.
+     * @param CacheInterface $cacher The object that will store and load the cache. Default type JsonCache.
      */
-    public function __construct($subdomain) {
-      // $this->topics = new TopicsLoader($subdomain);
+    public function __construct($subdomain, $cache_data = true, $cacher = '') {
+      if($cache_data === true) {
+        $this->cacher = empyt($cacher) ? new JsonCache($subdomain) : $cacher;
+      }
+      
+      $this->albums = new AlbumsLoader($subdomain, $this->cacher);
+      $this->events = new EventsLoader($subdomain, $this->cacher);
+      $this->needs = new NeedsLoader($subdomain, $this->cacher);
+      $this->prayers = new PrayersLoader($subdomain, $this->cacher);
+      $this->topics = new TopicsLoader($subdomain, $this->cacher);
+      
       // $this->topics->load_feed();
     }
     
     
     /**
-     *  Shows all the topics posted on the Plaza.
+     * Shows all the topics posted on the Plaza.
      *
      * @return array of all the topics posted on the Plaza.
      */
