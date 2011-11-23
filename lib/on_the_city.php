@@ -1,6 +1,7 @@
 <?php
 
-  require_once 'topics_loader.php';
+  include_once('auto_load.php');
+
 
   /** 
    * Project:    OnTheCity API
@@ -31,8 +32,8 @@
      * @param string $subdomain The church subdomain.
      */
     public function __construct($subdomain) {
-      $this->topics = new TopicsLoader($subdomain);
-      $this->topics->load_feed();
+      // $this->topics = new TopicsLoader($subdomain);
+      // $this->topics->load_feed();
     }
     
     
@@ -43,6 +44,10 @@
      */
     public function topics() {
       return $this->topics->all_topics();
+    }
+    
+    public function albums() {
+      $albums = new AlbumsLoader('livingstones');
     }
       
   }
