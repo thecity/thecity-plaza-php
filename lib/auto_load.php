@@ -1,10 +1,12 @@
 <?php
 
+  define('ONTHECITY_LIB_DIR', dirname(__FILE__));
+  define('ONTHECITY_STORAGE_DIR', dirname(__FILE__) . '/../storage/');
+
   function __autoload($class) {   
-    $base_dir = dirname(__FILE__);
-    $loaders_path = $base_dir . '/loaders/';
-    $cache_db_path = $base_dir .'/caches/db/';
-    $cache_file_path = $base_dir . '/caches/file/';
+    $loaders_path = ONTHECITY_LIB_DIR . '/loaders/';
+    $cache_db_path = ONTHECITY_LIB_DIR .'/caches/db/';
+    $cache_file_path = ONTHECITY_LIB_DIR . '/caches/file/';
 
     $file_name = strtolower(preg_replace('/([a-z])([A-Z])/', '$1_$2', $class));
     if(file_exists($loaders_path . $file_name . '.php')) { require_once($loaders_path . $file_name . '.php'); }

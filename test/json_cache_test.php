@@ -12,11 +12,8 @@
    
    $jc = new JsonCache('livingstones');
    
-   $save = $jc->save_data('hello world');
-   if( $save === true) {
-     echo "GOOD";
-   } else {
-     echo "BAD: $save";
-   }
-  
+   $save = $jc->save_data('dogman', 'helloworld', '2011-12-01');
+   echo $save === true ? 'Good' : "Bad: #save";
+   
+   echo $jc->get_data('dogman');
 ?>
