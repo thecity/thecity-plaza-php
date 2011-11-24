@@ -11,5 +11,12 @@
    
    
    $jc = new JsonCache('livingstones');
+   
+   $save = $jc->save_data('hello world');
+   if( $save === true) {
+     echo "GOOD";
+   } else {
+     echo "BAD: $save";
+   }
   
 ?>
