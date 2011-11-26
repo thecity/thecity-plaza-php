@@ -12,7 +12,7 @@
    
    $jc = new JsonCache('livingstones');
    
-   $save = $jc->save_data('dogman', 'helloworld', '2011-12-01');
+   $save = $jc->save_data('dogman', 'helloworld', 60);
    echo $save === true ? 'Good' : "Bad: #save";
    
    echo $jc->get_data('dogman');

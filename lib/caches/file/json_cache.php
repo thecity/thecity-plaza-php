@@ -45,14 +45,17 @@
      *
      * @param string $key The key to use to save the cache.
      * @param string $data The JSON data to be saved.
-     * @param string $expire_on The datetime to expire the cache.
+     * @param string $expire_in The number of seconds to pass before expiring the cache.
      *
      * @return mixed Returns true on success or a string error message on false.
      */
-    public function save_data($key, $data, $expire_on = nil) {
+    public function save_data($key, $data, $expire_in = null) {
+      if( is_null($expire_in) ) { (24 * 60 * 60); }
+      $expire_in += time();
+      
       $this->create_cache_directory_if_needed();
       
-      $filename = "$key.json.cache";
+      $filename = "$key-$expire_in-json.cache";
       
       if (!$handle = fopen($this->cache_dir . $filename, 'w')) {
         return "Cannot open file ($filename)";
@@ -73,8 +76,9 @@
      *
      * @param string $key The key to use to get the cache.
      */
-    public function get_data($key) {
-      $filename = "$key.json.cache";
+    public function get_data($key) {      
+      $filename = $this->find_file_key($key);
+      if( is_null($filename) ) { return null; }
       $handle = fopen($this->cache_dir . $filename, 'r');
       $contents = stream_get_contents($handle);
       fclose($handle);
@@ -112,6 +116,15 @@
         }
       }
     }
+    
+    
+    /**
+     * Ignore
+     */
+    private function find_file_key($key) {
+      return null;
+    }
+    
     
   }
 ?>
