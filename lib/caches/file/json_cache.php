@@ -54,7 +54,8 @@
       $expire_in += time();
       
       $this->create_cache_directory_if_needed();
-      
+      $this->expire_cache($key);
+            
       $filename = "$key-$expire_in-json.cache";
       
       if (!$handle = fopen($this->cache_dir . $filename, 'w')) {
@@ -92,7 +93,10 @@
      * @param string $key The key to use to expire the cache.
      */
     public function expire_cache($key) {
-      
+      $file = $this->find_file_key($key);
+      if(!is_null($file) && !unlink($this->cache_dir .$file)) {
+        throw new Exception("Unable to remove cache file: $file");
+      }
     }
     
     
@@ -121,10 +125,36 @@
     /**
      * Ignore
      */
-    private function find_file_key($key) {
+    private function find_file_key($key) {      
+      if ($handle = opendir($this->cache_dir)) {
+        while (false !== ($file = readdir($handle))) {
+          $pos = stripos($file, "$key-");
+          if($pos !== false and $pos == 0) { 
+            closedir($handle);
+            return $file; 
+          }
+        }
+        closedir($handle);
+      }
+      
       return null;
     }
     
+    
+    /**
+     * Ignore
+     */
+    private function all_cache_files($key) {      
+      $cache_files = array();
+      if ($handle = opendir($this->cache_dir)) {
+        while (false !== ($file = readdir($handle))) {
+          if(stripos($file, '-json.cache') !== false) { $cache_files[] = $file; }
+        }
+        closedir($handle);
+      }
+      
+      return $cache_files;
+    }
     
   }
 ?>
