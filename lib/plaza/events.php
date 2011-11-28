@@ -25,9 +25,9 @@
     /**
      *  Constructor.
      *
-     * @param EventsLoader $events_loader The object that loaded the data.
+     * @param EventsLoader $loader The object that loaded the data.
      */
-    public function __construct($events_loader) {
+    public function __construct($loader) {
 
     }
     

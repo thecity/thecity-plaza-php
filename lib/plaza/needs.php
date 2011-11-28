@@ -25,9 +25,9 @@
     /**
      *  Constructor.
      *
-     * @param NeedsLoader $needs_loader The object that loaded the data.
+     * @param NeedsLoader $loader The object that loaded the data.
      */
-    public function __construct($needs_loader) {
+    public function __construct($loader) {
 
     }
     

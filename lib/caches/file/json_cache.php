@@ -50,7 +50,7 @@
      * @return mixed Returns true on success or a string error message on false.
      */
     public function save_data($key, $data, $expire_in = null) {
-      if( is_null($expire_in) ) { (24 * 60 * 60); }
+      if( is_null($expire_in) ) { $expire_in = 24*60*60; }
       $expire_in += time();
       
       $this->create_cache_directory_if_needed();
@@ -62,7 +62,7 @@
         return "Cannot open file ($filename)";
       }
 
-      if (fwrite($handle, $data) === FALSE) {
+      if (fwrite($handle, serialize($data)) === FALSE) {
         return "Cannot write to file ($filename)";
       }
 
@@ -72,6 +72,7 @@
     } 
     
     
+
     /**
      * Get the data from the cache.
      *
@@ -83,7 +84,7 @@
       $handle = fopen($this->cache_dir . $filename, 'r');
       $contents = stream_get_contents($handle);
       fclose($handle);
-      return $contents;
+      return unserialize($contents);
     }
     
     
@@ -104,9 +105,18 @@
      * Check if the cache has expired.
      *
      * @param string $key The key to use to check if the cache has expired.
+     *
+     * @return boolean If the cache does not exist or is expired then true, otherwise false.
      */
     public function is_cache_expired($key) {
-      
+      $time_stamp_position = 1;
+      $fname = $this->find_file_key($key);
+      if( is_null($fname) ) { return true; }
+
+      $fname_a = explode('-', $fname);
+      if(time() > $fname_a[$time_stamp_position]) { return true; }
+        
+      return false;
     }
     
     

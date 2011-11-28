@@ -25,9 +25,9 @@
     /**
      *  Constructor.
      *
-     * @param AlbumsLoader $albums_loader The object that loaded the data.
+     * @param AlbumsLoader $loader The object that loaded the data.
      */
-    public function __construct($albums_loader) {
+    public function __construct($loader) {
 
     }
     

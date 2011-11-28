@@ -25,9 +25,9 @@
     /**
      *  Constructor.
      *
-     * @param PrayersLoader $prayers_loader The object that loaded the data.
+     * @param PrayersLoader $loader The object that loaded the data.
      */
-    public function __construct($prayers_loader) {
+    public function __construct($loader) {
 
     }
     

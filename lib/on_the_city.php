@@ -49,18 +49,10 @@
      * @param boolean $cache_data Cache the data. Default true.
      * @param CacheInterface $cacher The object that will store and load the cache. Default type JsonCache.
      */
-    public function __construct($subdomain, $cache_data = true, $cacher = '') {
+    public function __construct($subdomain, $cache_data = true, $cacher = null) {
       if($cache_data === true) {
         $this->cacher = empyt($cacher) ? new JsonCache($subdomain) : $cacher;
       }
-      
-      $this->albums = new AlbumsLoader($subdomain, $this->cacher);
-      $this->events = new EventsLoader($subdomain, $this->cacher);
-      $this->needs = new NeedsLoader($subdomain, $this->cacher);
-      $this->prayers = new PrayersLoader($subdomain, $this->cacher);
-      $this->topics = new TopicsLoader($subdomain, $this->cacher);
-      
-      // $this->topics->load_feed();
     }
     
     
@@ -70,13 +62,20 @@
      * @return array of all the topics posted on the Plaza.
      */
     public function topics() {
-      return $this->topics->all_topics();
+      if( !is_null($this->topics) ) { return $this->topics; }
+      
+      $loader = '';
+      if( is_null($this->cacher) ) {
+        $loader = new TopicsLoader( $this->subdomain );
+      } else {
+        $loader = new TopicsLoader( $this->subdomain, $this->cacher );
+      }
+      
+      $this->topics = new Topics( $loader );
+      return $this->topics;
     }
     
-    public function albums() {
-      $albums = new AlbumsLoader('livingstones');
-    }
-      
+
   }
 
 ?>
