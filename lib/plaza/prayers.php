@@ -33,7 +33,7 @@
     
     /**
      *  All the public prayers on the Plaza.
-     *  @return array of prayers
+     *  @return array of prayers.
      */
     public function all_prayers() {
       $prayers = array();

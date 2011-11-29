@@ -28,7 +28,17 @@
      * @param AlbumsLoader $loader The object that loaded the data.
      */
     public function __construct($loader) {
+      $this->json_data = $loader->load_feed();
+    }
 
+    /**
+    *  All the public albums on the Plaza.
+    *  @return array of albums.
+    */
+    public function all_albums() {
+      $albums = array();
+      foreach ($this->json_data as $album) { $albums[] = $album->global_event->title; }
+      return $albums;
     }
     
   }

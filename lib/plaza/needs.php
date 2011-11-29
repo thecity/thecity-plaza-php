@@ -28,7 +28,17 @@
      * @param NeedsLoader $loader The object that loaded the data.
      */
     public function __construct($loader) {
-
+      $this->json_data = $loader->load_feed();
+    }
+    
+    /**
+     *  All the public needs on the Plaza.
+     *  @return array of needs.
+     */
+    public function all_needs() {
+      $needs = array();
+      foreach ($this->json_data as $need) { $needs[] = $need->global_need->title; }
+      return $needs;
     }
     
   }

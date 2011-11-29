@@ -28,7 +28,17 @@
      * @param EventsLoader $loader The object that loaded the data.
      */
     public function __construct($loader) {
+      $this->json_data = $loader->load_feed();
+    }
 
+    /**
+     *  All the public events on the Plaza.
+     *  @return array of events.
+     */
+    public function all_events() {
+      $events = array();
+      foreach ($this->json_data as $event) { $events[] = $event->global_event->title; }
+      return $events;
     }
     
   }
