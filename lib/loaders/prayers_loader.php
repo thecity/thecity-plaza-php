@@ -18,7 +18,7 @@
    */
   class PrayersLoader {
 
-    private $class_key = 'topics';
+    private $class_key = 'prayers';
     
     // The URL to load the prayers from.
     private $url = '';
@@ -32,8 +32,9 @@
      *
      * @param string $subdomain The church subdomain.
      */
-    public function __construct($subdomain) {
+    public function __construct($subdomain, $cacher = null) {
       $this->url = "http://$subdomain.onthecity.org/plaza/prayers?format=json";      
+      if( !is_null($cacher) ) { $this->cacher = $cacher; }  
     }
     
     
