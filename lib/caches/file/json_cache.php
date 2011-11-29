@@ -77,6 +77,8 @@
      * Get the data from the cache.
      *
      * @param string $key The key to use to get the cache.
+     *
+     * @return JSON data.
      */
     public function get_data($key) {      
       $filename = $this->find_file_key($key);
@@ -92,6 +94,8 @@
      * Expire the cache.
      *
      * @param string $key The key to use to expire the cache.
+     *
+     * @throws Exception if unable to remove cache file.
      */
     public function expire_cache($key) {
       $file = $this->find_file_key($key);
