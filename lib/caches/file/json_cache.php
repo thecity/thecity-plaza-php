@@ -136,7 +136,7 @@
      * Ignore
      */
     private function find_file_key($key) {      
-      if ($handle = opendir($this->cache_dir)) {
+      if (file_exists($this->cache_dir) && $handle = opendir($this->cache_dir)) {
         while (false !== ($file = readdir($handle))) {
           $pos = stripos($file, "$key-");
           if($pos !== false and $pos == 0) { 
