@@ -28,7 +28,17 @@
      * @param PrayersLoader $loader The object that loaded the data.
      */
     public function __construct($loader) {
-
+      $this->json_data = $loader->load_feed();
+    }
+    
+    /**
+     *  All the public prayers on the Plaza.
+     *  @return array of prayers
+     */
+    public function all_prayers() {
+      $prayers = array();
+      foreach ($this->json_data as $prayer) { $prayers[] = $prayer->global_prayer->title; }
+      return $prayers;
     }
     
   }
