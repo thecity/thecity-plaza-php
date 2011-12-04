@@ -16,6 +16,6 @@
    
    $prayers = new Prayers($loader);
    
-   print_r( $prayers->all_prayers() );
+   print_r( $prayers->all() );
 
 ?>

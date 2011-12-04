@@ -35,7 +35,7 @@
      *  All the public prayers on the Plaza.
      *  @return array of prayers.
      */
-    public function all_prayers() {
+    public function all() {
       $prayers = array();
       foreach ($this->json_data as $prayer) { $prayers[] = $prayer->global_prayer->title; }
       return $prayers;

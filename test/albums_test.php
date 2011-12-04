@@ -16,6 +16,6 @@
    
    $albums = new Albums($loader);
    
-   print_r( $albums->all_albums() );
+   print_r( $albums->all() );
 
 ?>

@@ -35,7 +35,7 @@
      *  All the public needs on the Plaza.
      *  @return array of needs.
      */
-    public function all_needs() {
+    public function all() {
       $needs = array();
       foreach ($this->json_data as $need) { $needs[] = $need->global_need->title; }
       return $needs;

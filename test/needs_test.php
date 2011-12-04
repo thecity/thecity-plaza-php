@@ -16,6 +16,6 @@
    
    $needs = new Needs($loader);
    
-   print_r( $needs->all_needs() );
+   print_r( $needs->all() );
 
 ?>
