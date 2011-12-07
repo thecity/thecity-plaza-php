@@ -5,8 +5,8 @@
 
   function __autoload($class) {   
     $loaders_path = ONTHECITY_LIB_DIR . '/loaders/';
-    $cache_db_path = ONTHECITY_LIB_DIR .'/caches/db/';
-    $cache_file_path = ONTHECITY_LIB_DIR . '/caches/file/';
+    $cache_db_path = ONTHECITY_LIB_DIR .'/cachers/db/';
+    $cache_file_path = ONTHECITY_LIB_DIR . '/cachers/file/';
     $plaza_file_path = ONTHECITY_LIB_DIR . '/plaza/';
 
     $file_name = strtolower(preg_replace('/([a-z])([A-Z])/', '$1_$2', $class));
