@@ -35,7 +35,7 @@
      *  All the public topics on the Plaza.
      *  @return array of topics
      */
-    public function all_topics() {
+    public function all() {
       $topics = array();
       foreach ($this->json_data as $topic) { $topics[] = $topic->global_topic->title; }
       return $topics;

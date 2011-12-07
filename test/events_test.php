@@ -16,6 +16,6 @@
    
    $events = new Events($loader);
    
-   print_r( $events->all_events() );
+   print_r( $events->all() );
 
 ?>

@@ -35,7 +35,7 @@
     *  All the public albums on the Plaza.
     *  @return array of albums.
     */
-    public function all_albums() {
+    public function all() {
       $albums = array();
       foreach ($this->json_data as $album) { $albums[] = $album->global_event->title; }
       return $albums;

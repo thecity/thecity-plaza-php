@@ -51,7 +51,7 @@
      */
     public function __construct($subdomain, $cache_data = true, $cacher = null) {
       if($cache_data === true) {
-        $this->cacher = empyt($cacher) ? new JsonCache($subdomain) : $cacher;
+        $this->cacher = empty($cacher) ? new JsonCache($subdomain) : $cacher;
       }
     }
     

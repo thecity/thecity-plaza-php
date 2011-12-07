@@ -35,7 +35,7 @@
      *  All the public events on the Plaza.
      *  @return array of events.
      */
-    public function all_events() {
+    public function all() {
       $events = array();
       foreach ($this->json_data as $event) { $events[] = $event->global_event->title; }
       return $events;

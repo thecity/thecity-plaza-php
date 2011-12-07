@@ -30,6 +30,7 @@
      *  Constructor.
      *
      * @param string $subdomain The church subdomain.
+     * @param CacheInterface The cacher to be used to cache data.
      */
     public function __construct($subdomain, $cacher = null) {
       $this->url = "http://$subdomain.onthecity.org/plaza/needs?format=json";   

@@ -16,6 +16,6 @@
    
    $topics = new Topics($loader);
    
-   print_r( $topics->all_topics() );
+   print_r( $topics->all() );
 
 ?>
