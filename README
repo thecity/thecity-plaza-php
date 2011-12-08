@@ -6,11 +6,8 @@ I am currently working out the structure so it is VERY alpha right now.
 
 
 Requirements:
-PHP >= 5.2.0
+PHP >= 5.3
 
 Libraries:
 iconv
 
-
-
-redis-server /opt/local/etc/redis.conf

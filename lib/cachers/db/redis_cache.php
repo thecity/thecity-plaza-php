@@ -1,8 +1,10 @@
 <?php
 
+  require_once( ONTHECITY_LIB_DIR . '/../etc/predis/autoload.php');
+
   /** 
-  * Project:    OnTheCity API 
-  * File:       json_cache.php
+   * Project:    OnTheCity API 
+   * File:       json_cache.php
    *
    * @author Wes Hays <weshays@gbdev.com> 
    * @link https://github.com/weshays/onthecity-api-php
@@ -11,18 +13,20 @@
    */
 
 
+  
+
   /** 
    * This class caches the data in a json
    *
    * @package OnTheCity
    */
-  class JsonCache implements CacheInterface {
+  class RedisCache implements CacheInterface {
     
     // The subdomain to load and store the data for.
     private $subdomain;
     
-    // The subdomain directory path to save cache information
-    private $cache_dir;
+    // The redis instance to save cache information
+    private $redis;
     
     /**
      *  Constructor.
@@ -32,6 +36,9 @@
      */
     public function __construct($subdomain) {
       $this->subdomain = $subdomain;
+      
+      Predis\Autoloader::register();
+      $this->redis = new Predis\Client();
     }
     
     
@@ -45,6 +52,7 @@
      * @return mixed Returns true on success or a string error message on false.
      */
     public function save_data($key, $data, $expire_in = null) {
+      $this->redis->set($key, $data);
     } 
     
     
@@ -57,6 +65,7 @@
      * @return JSON data.
      */
     public function get_data($key) {   
+      $this->redis->get($key);
     }
     
     

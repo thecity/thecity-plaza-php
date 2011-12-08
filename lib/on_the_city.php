@@ -1,6 +1,6 @@
 <?php
 
-  include_once('auto_load.php');
+  include_once(dirname(__FILE__) . '/auto_load.php');
 
 
   /** 
