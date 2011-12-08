@@ -10,3 +10,7 @@ PHP >= 5.2.0
 
 Libraries:
 iconv
+
+
+
+redis-server /opt/local/etc/redis.conf
