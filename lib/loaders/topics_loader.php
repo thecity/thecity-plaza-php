@@ -33,7 +33,7 @@
      * @param CacheInterface The cacher to be used to cache data.
      */
     public function __construct($subdomain, $cacher = null) {
-      $this->url = "http://$subdomain.onthecity.org/plaza/topics?format=json";          
+      $this->url = "http://$subdomain.onthecity.org/plaza/topics?format=json";        
       if( !is_null($cacher) ) { $this->cacher = $cacher; }  
     }
     

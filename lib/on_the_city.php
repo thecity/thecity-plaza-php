@@ -50,6 +50,7 @@
      * @param CacheInterface $cacher The object that will store and load the cache. Default type JsonCache.
      */
     public function __construct($subdomain, $cache_data = true, $cacher = null) {
+      $this->subdomain = $subdomain;
       if($cache_data === true) {
         $this->cacher = empty($cacher) ? new JsonCache($subdomain) : $cacher;
       }
@@ -63,14 +64,7 @@
      */
     public function topics() {
       if( !is_null($this->topics) ) { return $this->topics; }
-      
-      $loader = '';
-      if( is_null($this->cacher) ) {
-        $loader = new TopicsLoader( $this->subdomain );
-      } else {
-        $loader = new TopicsLoader( $this->subdomain, $this->cacher );
-      }
-      
+      $loader = new TopicsLoader( $this->subdomain, $this->cacher );
       $this->topics = new Topics( $loader );
       return $this->topics;
     }
