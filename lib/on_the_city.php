@@ -81,6 +81,32 @@
       $this->needs = new Needs( $loader );
       return $this->needs;
     }
+ 
+    
+    /**
+     * Shows all the prayers posted on the Plaza.
+     *
+     * @return array of all the prayers posted on the Plaza.
+     */
+    public function prayers() {
+      if( !is_null($this->prayers) ) { return $this->prayers; }
+      $loader = new PrayersLoader( $this->subdomain, $this->cacher );
+      $this->prayers = new Prayers( $loader );
+      return $this->prayers;
+    }
+    
+    
+    /**
+     * Shows all the events posted on the Plaza.
+     *
+     * @return array of all the events posted on the Plaza.
+     */
+    public function events() {
+      if( !is_null($this->events) ) { return $this->events; }
+      $loader = new EventsLoader( $this->subdomain, $this->cacher );
+      $this->events = new Events( $loader );
+      return $this->events;
+    }
     
 
   }

@@ -46,17 +46,17 @@
     
     
     /**
-     * Get the 
+     * Get the specified need.
      *
-     * @param index The index of the topic to get all the information for.
+     * @param index The index of the need to get all the information for.
      *
-     * @return array of data for the topic.
+     * @return array of data for the need.
      * array(
      *  'title' => '...',
      *  'created_at => '...',
      *  'who_posted' => '...',
      *  'content' => '...',
-     *  'posts' => array( 
+     *  'need_responses' => array( 
      *    array(
      *      'created_at' => '...',
      *      'who_posted' => '...',
@@ -73,9 +73,17 @@
       
       $rneed['need_responses'] = array();
       foreach ($this->json_data[$index]->global_need->need_responses as $need_response) { 
+        $name = 'Unknown';
+        if( !is_null($need_response->user) ) {
+          $name = $need_response->user->long_name;
+        } 
+        else if( !is_null($need_response->facebook_user) ) {
+          $name = $need_response->facebook_user->first.' '.$need_response->facebook_user->last;
+        }
+        
         $rneed['need_responses'][] = array(
           'created_at' => $need_response->created_at,
-          'who_posted' => $need_response->user->long_name,
+          'who_posted' => $name,
           'content'    => $this->clean_text( $need_response->body ),
         );
       }

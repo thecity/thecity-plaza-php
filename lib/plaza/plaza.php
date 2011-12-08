@@ -20,7 +20,7 @@
   class Plaza {
 
     /**
-     *  Generic contractor.
+     *  Generic constructor.
      */
     public function __construct() {
       // Do nothing
@@ -28,12 +28,13 @@
     
     
     /**
-     *  Clean text to remove html tags and other misc characters.
+     *  Clean text by removing html tags and other special characters.
+     *
+     * @return Clean text.
      */
     protected function clean_text($text) {
       $text = strip_tags( $text );
-      //$text = iconv("UTF-8", "ISO-8859-1", $text);
-      return $text;
+      return iconv("UTF-8", "ISO-8859-1//IGNORE", $text);
     }
     
   }

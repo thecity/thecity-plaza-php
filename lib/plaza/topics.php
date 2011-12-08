@@ -46,7 +46,7 @@
     
     
     /**
-     * Get the 
+     * Get the specified topic.
      *
      * @param index The index of the topic to get all the information for.
      *
@@ -73,9 +73,17 @@
       
       $rtopic['posts'] = array();
       foreach ($this->json_data[$index]->global_topic->posts as $post) { 
+        $name = 'Unknown';
+        if( !is_null($post->user) ) {
+          $name = $post->user->long_name;
+        } 
+        else if( !is_null($post->facebook_user) ) {
+          $name = $post->facebook_user->first.' '.$post->facebook_user->last;
+        }
+        
         $rtopic['posts'][] = array(
           'created_at' => $post->created_at,
-          'who_posted' => $post->user->long_name,
+          'who_posted' => $name,
           'content'    => $this->clean_text( $post->body ),
         );
       }

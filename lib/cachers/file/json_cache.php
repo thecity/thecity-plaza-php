@@ -1,8 +1,5 @@
 <?php
 
-  include_once(ONTHECITY_LIB_DIR . '/cachers/cache_interface.php');
-
-
   /** 
   * Project:    OnTheCity API 
   * File:       json_cache.php
