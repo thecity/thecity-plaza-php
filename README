@@ -3,3 +3,10 @@ This PHP project is meant to be used with OnTheCity (Software to enable communic
 I started developing this project for my church (Living Stones - Reno, NV) as a way to pull church needs, topics, etc from the Plaza.
 
 I am currently working out the structure so it is VERY alpha right now.
+
+
+Requirements:
+PHP >= 5.2.0
+
+Libraries:
+iconv

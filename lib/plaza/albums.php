@@ -16,7 +16,7 @@
    *
    * @package OnTheCity
    */
-  class Albums {
+  class Albums extends Plaza {
 
     // Holds the data
     private $json_data = '';
@@ -28,6 +28,7 @@
      * @param AlbumsLoader $loader The object that loaded the data.
      */
     public function __construct($loader) {
+      parent::__construct();
       $this->json_data = $loader->load_feed();
     }
 

@@ -50,7 +50,7 @@
      * @return mixed Returns true on success or a string error message on false.
      */
     public function save_data($key, $data, $expire_in = null) {
-      if( is_null($expire_in) ) { $expire_in = 24*60; } # 24 hours
+      if( is_null($expire_in) ) { $expire_in = 86400; } # 86400 seconds = 1 day
       $expire_in += time();
       
       $this->create_cache_directory_if_needed();

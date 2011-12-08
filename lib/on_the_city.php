@@ -69,6 +69,19 @@
       return $this->topics;
     }
     
+    
+    /**
+     * Shows all the needs posted on the Plaza.
+     *
+     * @return array of all the needs posted on the Plaza.
+     */
+    public function needs() {
+      if( !is_null($this->needs) ) { return $this->needs; }
+      $loader = new NeedsLoader( $this->subdomain, $this->cacher );
+      $this->needs = new Needs( $loader );
+      return $this->needs;
+    }
+    
 
   }
 

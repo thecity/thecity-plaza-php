@@ -11,7 +11,11 @@
   
   $on_the_city = new OnTheCity('livingstones');
 
-  print_r( $on_the_city->topics() );
+  $topics = $on_the_city->topics();  
+  print_r( $topics->all_titles() );  
+  print_r( $topics->get_topic(2) );
   
-  //$on_the_city->albums();
+  // $needs = $on_the_city->needs();  
+  // print_r( $needs->all_titles() );  
+  // print_r( $needs->get_need(2) );
 ?>
