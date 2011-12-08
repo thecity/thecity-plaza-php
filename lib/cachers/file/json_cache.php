@@ -28,7 +28,6 @@
      *  Constructor.
      *
      * @param string $subdomain The church subdomain.
-     * @param array $options.
      * 
      */
     public function __construct($subdomain) {
