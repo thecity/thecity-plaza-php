@@ -49,45 +49,10 @@
      *
      * @param index The index of the prayer to get all the information for.
      *
-     * @return array of data for the topic.
-     * array(
-     *  'title' => '...',
-     *  'created_at => '...',
-     *  'who_posted' => '...',
-     *  'content' => '...',
-     *  'album_responses' => array( 
-     *    array(
-     *      'created_at' => '...',
-     *      'who_posted' => '...',
-     *      'content' => '...'
-     *    )
-     * )
+     * @return Album
      */
     public function get_album($index) {
-      $ralbum = array();
-      $ralbum['title'] = $this->json_data[$index]->global_topic->title;   
-      $ralbum['created_at'] = $this->json_data[$index]->global_topic->created_at;
-      $ralbum['who_posted'] = $this->json_data[$index]->global_topic->user->long_name;
-      $ralbum['content'] = $this->clean_text( $this->json_data[$index]->global_album->body );
-      
-      $ralbum['album_responses'] = array();
-      foreach ($this->json_data[$index]->global_album->album_responses as $album_response) { 
-        $name = 'Unknown';
-        if( !is_null($album_response->user) ) {
-          $name = $album_response->user->long_name;
-        } 
-        else if( !is_null($album_response->facebook_user) ) {
-          $name = $album_response->facebook_user->first.' '.$album_response->facebook_user->last;
-        }
-        
-        $ralbum['posts'][] = array(
-          'created_at' => $album_response->created_at,
-          'who_posted' => $name,
-          'content'    => $this->clean_text( $album_response->body ),
-        );
-      }
-       
-      return $ralbum;
+      return new Album( $this->json_data[$index]->global_topic );
     }
     
   }

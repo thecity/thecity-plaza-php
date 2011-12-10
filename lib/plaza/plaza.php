@@ -26,16 +26,5 @@
       // Do nothing
     }
     
-    
-    /**
-     *  Clean text by removing html tags and other special characters.
-     *
-     * @return Clean text.
-     */
-    protected function clean_text($text) {
-      $text = strip_tags( $text );
-      return iconv("UTF-8", "ISO-8859-1//IGNORE", $text);
-    }
-    
   }
 ?>

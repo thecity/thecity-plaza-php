@@ -50,45 +50,10 @@
      *
      * @param index The index of the prayer to get all the information for.
      *
-     * @return array of data for the prayer.
-     * array(
-     *  'title' => '...',
-     *  'created_at => '...',
-     *  'who_posted' => '...',
-     *  'content' => '...',
-     *  'prayer_responses' => array( 
-     *    array(
-     *      'created_at' => '...',
-     *      'who_posted' => '...',
-     *      'content' => '...'
-     *    )
-     * )
+     * @return Prayer
      */
     public function get_prayer($index) {
-      $rprayer = array();
-      $rprayer['title'] = $this->json_data[$index]->global_prayer->title;   
-      $rprayer['created_at'] = $this->json_data[$index]->global_prayer->created_at;
-      $rprayer['who_posted'] = $this->json_data[$index]->global_prayer->user->long_name;
-      $rprayer['content'] = $this->clean_text( $this->json_data[$index]->global_prayer->body );
-      
-      $rprayer['prayer_responses'] = array();
-      foreach ($this->json_data[$index]->global_prayer->prayer_responses as $prayer_response) { 
-        $name = 'Unknown';
-        if( !is_null($prayer_response->user) ) {
-          $name = $prayer_response->user->long_name;
-        } 
-        else if( !is_null($prayer_response->facebook_user) ) {
-          $name = $prayer_response->facebook_user->first.' '.$prayer_response->facebook_user->last;
-        }
-        
-        $rprayer['prayer_responses'][] = array(
-          'created_at' => $prayer_response->created_at,
-          'who_posted' => $name,
-          'content'    => $this->clean_text( $prayer_response->body ),
-        );
-      }
-       
-      return $rprayer;
+      return new Prayer( $this->json_data[$index]->global_prayer );
     }
     
   }

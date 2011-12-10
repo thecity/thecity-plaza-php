@@ -50,45 +50,10 @@
      *
      * @param index The index of the topic to get all the information for.
      *
-     * @return array of data for the topic.
-     * array(
-     *  'title' => '...',
-     *  'created_at => '...',
-     *  'who_posted' => '...',
-     *  'content' => '...',
-     *  'posts' => array( 
-     *    array(
-     *      'created_at' => '...',
-     *      'who_posted' => '...',
-     *      'content' => '...'
-     *    )
-     * )
+     * @return Topic
      */
     public function get_topic($index) {
-      $rtopic = array();
-      $rtopic['title'] = $this->json_data[$index]->global_topic->title;   
-      $rtopic['created_at'] = $this->json_data[$index]->global_topic->created_at;
-      $rtopic['who_posted'] = $this->json_data[$index]->global_topic->user->long_name;
-      $rtopic['content'] = $this->clean_text( $this->json_data[$index]->global_topic->body );
-      
-      $rtopic['posts'] = array();
-      foreach ($this->json_data[$index]->global_topic->posts as $post) { 
-        $name = 'Unknown';
-        if( !is_null($post->user) ) {
-          $name = $post->user->long_name;
-        } 
-        else if( !is_null($post->facebook_user) ) {
-          $name = $post->facebook_user->first.' '.$post->facebook_user->last;
-        }
-        
-        $rtopic['posts'][] = array(
-          'created_at' => $post->created_at,
-          'who_posted' => $name,
-          'content'    => $this->clean_text( $post->body ),
-        );
-      }
-       
-      return $rtopic;
+      return new Topic( $this->json_data[$index]->global_topic );      
     }
     
   }
