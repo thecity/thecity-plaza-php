@@ -30,7 +30,7 @@ Clone, fork or download the package.
   $topics = $on_the_city->topics();
   
 
-=== WordPress
+== WordPress
 If you use WordPress there is a WordPress plugin that uses this library.
 https://github.com/weshays/onthecity-wordpress  
   
