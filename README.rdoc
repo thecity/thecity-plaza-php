@@ -6,6 +6,8 @@ It is possible to pull church needs, topics, events, prayers and albums from the
 
 Data pulled from TheCity is by default cached for 1 day (24 hours) so that subsequent requests are faster.
 
+TheCity API docs
+http://thecity.zendesk.com/entries/359458-using-the-plaza-json-api
 
 == Documentation
 http://weshays.github.com/onthecity-api-php/
