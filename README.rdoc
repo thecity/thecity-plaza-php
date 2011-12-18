@@ -31,8 +31,14 @@ Clone, fork or download the package.
   
 
 == WordPress
+
 If you use WordPress there is a WordPress plugin that uses this library.
 https://github.com/weshays/onthecity-wordpress  
+  
+  
+== Contributing
+
+If you want to help out fork the project and send me a pull request.  You can also send me feature requests.
   
   
 == License
