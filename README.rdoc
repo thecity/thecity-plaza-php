@@ -29,6 +29,11 @@ Clone, fork or download the package.
   $on_the_city = new OnTheCity('mychurch');
   $topics = $on_the_city->topics();
   
+
+=== WordPress
+If you use WordPress there is a WordPress plugin that uses this library.
+https://github.com/weshays/onthecity-wordpress  
+  
   
 == License
 
