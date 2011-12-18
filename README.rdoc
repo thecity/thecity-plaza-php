@@ -14,7 +14,7 @@ http://weshays.github.com/onthecity-api-php/
 == Requirements
 PHP >= 5.3
 
-http://php.net/manual/en/book.iconv.php iconv
+iconv: http://php.net/manual/en/book.iconv.php
 
 == Installing
 Clone, fork or download the package.
