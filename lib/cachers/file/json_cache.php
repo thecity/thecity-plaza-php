@@ -121,7 +121,7 @@
     
     
     /**
-     * Ignore
+     * @ignore
      */
     private function create_cache_directory_if_needed() {
       if(!file_exists($this->cache_dir )){
@@ -133,7 +133,7 @@
     
     
     /**
-     * Ignore
+     * @ignore
      */
     private function find_file_key($key) {      
       if (file_exists($this->cache_dir) && $handle = opendir($this->cache_dir)) {
@@ -152,7 +152,7 @@
     
     
     /**
-     * Ignore
+     * @ignore
      */
     private function all_cache_files($key) {      
       $cache_files = array();

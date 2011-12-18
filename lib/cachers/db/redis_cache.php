@@ -1,7 +1,5 @@
 <?php
 
-  require_once( ONTHECITY_LIB_DIR . '/../etc/predis/autoload.php');
-
   /** 
    * Project:    OnTheCity API 
    * File:       json_cache.php
@@ -12,7 +10,10 @@
    * @package OnTheCity
    */
 
-
+  /**
+   * Uses the predis library to access Redis.
+   */
+  require_once( ONTHECITY_LIB_DIR . '/../etc/predis/autoload.php');
   
 
   /** 

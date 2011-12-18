@@ -1,0 +1,2 @@
+rm -rf ../onthecity-api-php-ghp/*
+phpdoc -o HTML:Smarty:PHP -d lib -t ../onthecity-api-php-ghp/

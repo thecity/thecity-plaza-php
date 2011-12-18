@@ -1,15 +1,29 @@
-This PHP project is meant to be used with OnTheCity (Software to enable communication and community in your church)
+= OnTheCity PHP Library
 
-I started developing this project for my church (Living Stones - Reno, NV) as a way to pull church needs, topics, etc from the Plaza.
+This PHP library is meant to be used with OnTheCity (Software to enable communication and community in your church).
 
-I am currently working out the structure so it is VERY alpha right now.
+It is possible to pull church needs, topics, events, prayers and albums from the Plaza so that you can use them as necessary.
 
-
-Requirements:
-PHP >= 5.3
-
-Libraries:
-iconv
+Data pulled from TheCity is by default cached for 1 day (24 hours) so that subsequent requests are faster.
 
 
-#tc
+== Documentation
+http://weshays.github.com/onthecity-api-php/
+
+
+== Installing
+Clone, fork or download the package.
+
+== Usage
+
+=== Basic usage
+
+  require_once 'lib/on_the_city.php';
+  $on_the_city = new OnTheCity('mychurch');
+  $topics = $on_the_city->topics();
+  
+  
+== License
+
+This plugin is released under the MIT license. Please contact weshays
+(http://github.com/weshays) for any questions.

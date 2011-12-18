@@ -59,7 +59,7 @@
     
     
     /**
-     * Ignore
+     * @ignore
      */
     private function cache_data($data) {
       if( !is_null($this->cacher) ) { 

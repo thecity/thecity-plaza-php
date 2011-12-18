@@ -1,8 +1,5 @@
 <?php
 
-  include_once(dirname(__FILE__) . '/auto_load.php');
-
-
   /** 
    * Project:    OnTheCity API
    * File:       on_the_city.php
@@ -12,6 +9,12 @@
    * @version 1.0a
    * @package OnTheCity
    */
+
+  /**
+   * Includes the autoloader.
+   */
+  include_once(dirname(__FILE__) . '/auto_load.php');
+
 
   /** 
    * This class is meant to be a wrapper for the OnTheCity.org API.
