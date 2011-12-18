@@ -13,6 +13,7 @@ http://weshays.github.com/onthecity-api-php/
 
 == Requirements
 PHP >= 5.3
+
 iconv
 
 == Installing
