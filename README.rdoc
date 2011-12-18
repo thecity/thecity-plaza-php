@@ -11,6 +11,10 @@ Data pulled from TheCity is by default cached for 1 day (24 hours) so that subse
 http://weshays.github.com/onthecity-api-php/
 
 
+== Requirements
+PHP >= 5.3
+iconv
+
 == Installing
 Clone, fork or download the package.
 
