@@ -40,7 +40,7 @@
      */
     public function all_titles() {
       $events = array();
-      foreach ($this->json_data as $event) { $events[] = $event->global_event->title; }
+      foreach ($this->json_data as $event) { $events[] = $event->title; }
       return $events;
     }
     
@@ -53,7 +53,7 @@
      * @return Event
      */
     public function get_event($index) {
-      return new Event( $this->json_data[$index]->global_event );
+      return new Event( $this->json_data[$index] );
     }
   }
 ?>

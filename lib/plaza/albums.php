@@ -39,7 +39,7 @@
     */
     public function all() {
       $albums = array();
-      foreach ($this->json_data as $album) { $albums[] = $album->global_event->title; }
+      foreach ($this->json_data as $album) { $albums[] = $album-->title; }
       return $albums;
     }
     
@@ -52,7 +52,7 @@
      * @return Album
      */
     public function get_album($index) {
-      return new Album( $this->json_data[$index]->global_topic );
+      return new Album( $this->json_data[$index] );
     }
     
   }

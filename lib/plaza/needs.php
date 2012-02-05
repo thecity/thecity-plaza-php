@@ -40,7 +40,7 @@
      */
     public function all_titles() {
       $needs = array();
-      foreach ($this->json_data as $need) { $needs[] = $need->global_need->title; }
+      foreach ($this->json_data as $need) { $needs[] = $need->title; }
       return $needs;
     }
     
@@ -53,7 +53,7 @@
      * @return Need
      */
     public function get_need($index) {
-      return new Need( $this->json_data[$index]->global_need );
+      return new Need( $this->json_data[$index] );
     }
     
   }

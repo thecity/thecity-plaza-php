@@ -40,7 +40,7 @@
      */
     public function all_titles() {
       $topics = array();
-      foreach ($this->json_data as $topic) { $topics[] = $topic->global_topic->title; }
+      foreach ($this->json_data as $topic) { $topics[] = $topic->title; }
       return $topics;
     }
     
@@ -53,7 +53,7 @@
      * @return Topic
      */
     public function get_topic($index) {
-      return new Topic( $this->json_data[$index]->global_topic );      
+      return new Topic( $this->json_data[$index] );      
     }
     
   }

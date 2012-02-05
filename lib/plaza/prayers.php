@@ -40,7 +40,7 @@
      */
     public function all_titles() {
       $prayers = array();
-      foreach ($this->json_data as $prayer) { $prayers[] = $prayer->global_prayer->title; }
+      foreach ($this->json_data as $prayer) { $prayers[] = $prayer->title; }
       return $prayers;
     }
     
@@ -53,7 +53,7 @@
      * @return Prayer
      */
     public function get_prayer($index) {
-      return new Prayer( $this->json_data[$index]->global_prayer );
+      return new Prayer( $this->json_data[$index] );
     }
     
   }
