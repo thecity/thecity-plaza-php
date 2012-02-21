@@ -1,17 +1,20 @@
 <?php
 
   /** 
-   * Project:    OnTheCity API 
-   * File:       json_cache.php
+   * Project:    Plaza-PHP
+   * File:       redis_cache.php
    *
-   * @author Wes Hays <weshays@gbdev.com> 
-   * @link https://github.com/weshays/onthecity-api-php
-   * @version 1.0a
-   * @package OnTheCity
+   * @author Wes Hays <wes@onthecity.org> 
+   * @link https://github.com/thecity/plaza-php
+   * @version 0.1
+   * @package TheCity
    */
+
 
   /**
    * Uses the predis library to access Redis.
+   *
+   * @package TheCity
    */
   require_once( ONTHECITY_LIB_DIR . '/../etc/predis/autoload.php');
   

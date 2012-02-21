@@ -1,20 +1,20 @@
 <?php
 
   /** 
-  * Project:    OnTheCity API 
-  * File:       albums.php
+   * Project:    Plaza-PHP
+   * File:       albums.php
    *
-   * @author Wes Hays <weshays@gbdev.com> 
-   * @link https://github.com/weshays/onthecity-api-php
-   * @version 1.0a
-   * @package OnTheCity
+   * @author Wes Hays <wes@onthecity.org> 
+   * @link https://github.com/thecity/plaza-php
+   * @version 0.1
+   * @package TheCity
    */
 
 
   /** 
    * This class is a wrapper for the albums page.
    *
-   * @package OnTheCity
+   * @package TheCity
    */
   class Albums extends Plaza {
 
@@ -39,7 +39,7 @@
     */
     public function all() {
       $albums = array();
-      foreach ($this->json_data as $album) { $albums[] = $album-->title; }
+      foreach ($this->json_data as $album) { $albums[] = $album->global_album->title; }
       return $albums;
     }
     
@@ -52,7 +52,7 @@
      * @return Album
      */
     public function get_album($index) {
-      return new Album( $this->json_data[$index] );
+      return new Album( $this->json_data[$index]->global_albums );
     }
     
   }

@@ -1,20 +1,20 @@
 <?php
 
   /** 
-  * Project:    OnTheCity API 
-  * File:       needs.php
+   * Project:    Plaza-PHP
+   * File:       needs.php
    *
-   * @author Wes Hays <weshays@gbdev.com> 
-   * @link https://github.com/weshays/onthecity-api-php
-   * @version 1.0a
-   * @package OnTheCity
+   * @author Wes Hays <wes@onthecity.org> 
+   * @link https://github.com/thecity/plaza-php
+   * @version 0.1
+   * @package TheCity
    */
 
 
   /** 
    * This class is a wrapper for the needs page.
    *
-   * @package OnTheCity
+   * @package TheCity
    */
   class Needs extends Plaza  {
 
@@ -40,7 +40,7 @@
      */
     public function all_titles() {
       $needs = array();
-      foreach ($this->json_data as $need) { $needs[] = $need->title; }
+      foreach ($this->json_data as $need) { $needs[] = $need->global_need->title; }
       return $needs;
     }
     
@@ -53,7 +53,7 @@
      * @return Need
      */
     public function get_need($index) {
-      return new Need( $this->json_data[$index] );
+      return new Need( $this->json_data[$index]->global_needs );
     }
     
   }

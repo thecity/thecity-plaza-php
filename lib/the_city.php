@@ -2,14 +2,14 @@
 
   /** 
    * Project:    Plaza-PHP
-   * File:       the_city.php
+   * File:       topics.php
    *
    * @author Wes Hays <wes@onthecity.org> 
    * @link https://github.com/thecity/plaza-php
    * @version 0.1
    * @package TheCity
    */
-
+   
 
   /**
    * Includes the autoloader.

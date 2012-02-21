@@ -3,15 +3,15 @@
 /* *******************************************
  # This is a demo file to show usage.
  #
- # @package OnTheCity
- # @author Wes Hays <weshays@gbdev.com>
+ # @package TheCity
+ # @author Wes Hays <wes@onthecity.org>
  ******************************************* */
 
-  require_once 'lib/on_the_city.php';
+  require_once 'lib/the_city.php';
   
-  $on_the_city = new OnTheCity('livingstones');
+  $the_city = new TheCity('livingstones');
 
-  $topics = $on_the_city->topics();  
+  $topics = $the_city->topics();  
   print_r( $topics->all_titles() );  
   $topic = $topics->get_topic(2);
   echo $topic->title() . "\n";
@@ -21,15 +21,15 @@
   print_r($topic->posts());
   
   
-  // $needs = $on_the_city->needs();  
+  // $needs = $the_city->needs();  
   // print_r( $needs->all_titles() );  
   // print_r( $needs->get_need(2) );
   
-  // $prayers = $on_the_city->prayers();  
+  // $prayers = $the_city->prayers();  
   // print_r( $prayers->all_titles() );  
   // print_r( $prayers->get_prayer(2) );
   
-  // $events = $on_the_city->events();  
+  // $events = $the_city->events();  
   // print_r( $events->all_titles() );  
   // print_r( $events->get_event(2) );
 ?>

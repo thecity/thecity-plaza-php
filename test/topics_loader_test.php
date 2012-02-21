@@ -5,8 +5,8 @@
   /** 
    * These are the tests for the TopicsLoader class.
    *
-   * @package OnTheCity
-   * @author Wes Hays <weshays@gbdev.com>
+   * @package TheCity
+   * @author Wes Hays <wes@onthecity.com>
    */
    
    class TestTopicsLoader extends UnitTestCase {

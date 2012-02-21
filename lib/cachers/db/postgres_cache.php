@@ -1,13 +1,13 @@
 <?php
 
   /** 
-   * Project:    OnTheCity API 
+   * Project:    Plaza-PHP
    * File:       postgres_cache.php
    *
-   * @author Wes Hays <weshays@gbdev.com> 
-   * @link https://github.com/weshays/onthecity-api-php
-   * @version 1.0a
-   * @package OnTheCity
+   * @author Wes Hays <wes@onthecity.org> 
+   * @link https://github.com/thecity/plaza-php
+   * @version 0.1
+   * @package TheCity
    */
 
 
@@ -16,7 +16,7 @@
   /** 
    * This class caches the data in a postgresql database.
    *
-   * @package OnTheCity
+   * @package TheCity
    */
   class PostgresCache implements CacheInterface {
     

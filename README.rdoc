@@ -1,6 +1,6 @@
 = OnTheCity PHP Library
 
-This PHP library is meant to be used with OnTheCity (Software to enable communication and community in your church).
+This PHP library is meant to be used with TheCity (Software to enable communication and community in your church).
 
 It is possible to pull church needs, topics, events, prayers and albums from the Plaza so that you can use them as necessary.
 
@@ -10,7 +10,7 @@ TheCity API docs
 http://thecity.zendesk.com/entries/359458-using-the-plaza-json-api
 
 == Documentation
-http://weshays.github.com/onthecity-api-php/
+http://weshays.github.com/thecity-api-php/
 
 
 == Requirements

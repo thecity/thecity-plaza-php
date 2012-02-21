@@ -1,20 +1,20 @@
 <?php
 
   /** 
-  * Project:    OnTheCity API 
-  * File:       prayers_loader.php
+   * Project:    Plaza-PHP
+   * File:       prayers_loader.php
    *
-   * @author Wes Hays <weshays@gbdev.com> 
-   * @link https://github.com/weshays/onthecity-api-php
-   * @version 1.0a
-   * @package OnTheCity
+   * @author Wes Hays <wes@onthecity.org> 
+   * @link https://github.com/thecity/plaza-php
+   * @version 0.1
+   * @package TheCity
    */
 
 
   /** 
    * This class loads the Plaza prayers for the subdomain.
    *
-   * @package OnTheCity
+   * @package TheCity
    */
   class PrayersLoader {
 
@@ -34,7 +34,7 @@
      * @param CacheInterface The cacher to be used to cache data.
      */
     public function __construct($subdomain, $cacher = null) {
-      $this->url = "http://$subdomain.onthecity.org/plaza/prayers?format=json";      
+      $this->url = "http://$subdomain.onthecity.org/plaza/prayers.json";      
       if( !is_null($cacher) ) { $this->cacher = $cacher; }  
     }
     

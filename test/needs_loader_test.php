@@ -5,8 +5,8 @@
   /** 
    * These are the tests for the NeedsLoader class.
    *
-   * @package OnTheCity
-   * @author Wes Hays <weshays@gbdev.com>
+   * @package TheCity
+   * @author Wes Hays <wes@onthecity.com>
    */
    
    class TestNeedsLoader extends UnitTestCase {

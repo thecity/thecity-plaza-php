@@ -5,8 +5,8 @@
   /** 
    * These are the tests for the RedisCache class.
    *
-   * @package OnTheCity
-   * @author Wes Hays <weshays@gbdev.com>
+   * @package TheCity
+   * @author Wes Hays <wes@onthecity.com>
    */
    
    class TestRedisCache extends UnitTestCase {

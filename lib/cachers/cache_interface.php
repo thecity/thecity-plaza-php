@@ -1,20 +1,20 @@
 <?php
 
   /** 
-  * Project:    OnTheCity API 
-  * File:       cache_interface.php
+   * Project:    Plaza-PHP
+   * File:       cache_interface.php
    *
-   * @author Wes Hays <weshays@gbdev.com> 
-   * @link https://github.com/weshays/onthecity-api-php
-   * @version 1.0a
-   * @package OnTheCity
+   * @author Wes Hays <wes@onthecity.org> 
+   * @link https://github.com/thecity/plaza-php
+   * @version 0.1
+   * @package TheCity
    */
 
 
   /** 
    * This interface is the standard for all caching objects.
    *
-   * @package OnTheCity
+   * @package TheCity
    */
   interface CacheInterface {
     

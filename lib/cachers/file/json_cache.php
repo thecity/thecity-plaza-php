@@ -1,20 +1,20 @@
 <?php
 
   /** 
-  * Project:    OnTheCity API 
-  * File:       json_cache.php
+   * Project:    Plaza-PHP
+   * File:       json_cache.php
    *
-   * @author Wes Hays <weshays@gbdev.com> 
-   * @link https://github.com/weshays/onthecity-api-php
-   * @version 1.0a
-   * @package OnTheCity
+   * @author Wes Hays <wes@onthecity.org> 
+   * @link https://github.com/thecity/plaza-php
+   * @version 0.1
+   * @package TheCity
    */
 
 
   /** 
    * This class caches the data in a json
    *
-   * @package OnTheCity
+   * @package TheCity
    */
   class JsonCache implements CacheInterface {
     
@@ -125,7 +125,7 @@
      */
     private function create_cache_directory_if_needed() {
       if(!file_exists($this->cache_dir )){
-        if(!mkdir($this->cache_dir)) {
+        if(!mkdir($this->cache_dir, 0700, true)) {
           throw new Exception('Failed to create cache directory');
         }
       }

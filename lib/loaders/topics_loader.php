@@ -1,20 +1,20 @@
 <?php
 
   /** 
-  * Project:    OnTheCity API 
-  * File:       topics_loader.php
+   * Project:    Plaza-PHP
+   * File:       topics_loader.php
    *
-   * @author Wes Hays <weshays@gbdev.com> 
-   * @link https://github.com/weshays/onthecity-api-php
-   * @version 1.0a
-   * @package OnTheCity
+   * @author Wes Hays <wes@onthecity.org> 
+   * @link https://github.com/thecity/plaza-php
+   * @version 0.1
+   * @package TheCity
    */
 
 
   /** 
    * This class loads the Plaza topics for the subdomain.
    *
-   * @package OnTheCity
+   * @package TheCity
    */
   class TopicsLoader {
     
@@ -33,7 +33,7 @@
      * @param CacheInterface The cacher to be used to cache data.
      */
     public function __construct($subdomain, $cacher = null) {
-      $this->url = "http://$subdomain.onthecity.org/plaza/topics?format=json";        
+      $this->url = "http://$subdomain.onthecity.org/plaza/topics.json";        
       if( !is_null($cacher) ) { $this->cacher = $cacher; }  
     }
     

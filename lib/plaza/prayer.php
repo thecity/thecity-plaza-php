@@ -1,20 +1,20 @@
 <?php
 
   /** 
-  * Project:    OnTheCity API 
-  * File:       prayer.php
+   * Project:    Plaza-PHP
+   * File:       prayer.php
    *
-   * @author Wes Hays <weshays@gbdev.com> 
-   * @link https://github.com/weshays/onthecity-api-php
-   * @version 1.0a
-   * @package OnTheCity
+   * @author Wes Hays <wes@onthecity.org> 
+   * @link https://github.com/thecity/plaza-php
+   * @version 0.1
+   * @package TheCity
    */
 
 
   /** 
    * A prayer instance.  This object is immutable.
    *
-   * @package OnTheCity
+   * @package TheCity
    */
   class Prayer extends Plaza {
 

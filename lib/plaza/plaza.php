@@ -1,13 +1,13 @@
 <?php
 
   /** 
-  * Project:    OnTheCity API 
-  * File:       plaza.php
+   * Project:    Plaza-PHP
+   * File:       plaza.php
    *
-   * @author Wes Hays <weshays@gbdev.com> 
-   * @link https://github.com/weshays/onthecity-api-php
-   * @version 1.0a
-   * @package OnTheCity
+   * @author Wes Hays <wes@onthecity.org> 
+   * @link https://github.com/thecity/plaza-php
+   * @version 0.1
+   * @package TheCity
    */
 
 
@@ -15,7 +15,7 @@
    * This is the generic class the different Plaza attributes 
    * (topics, prayers, needs, events, albums) will inherit from.
    *
-   * @package OnTheCity
+   * @package TheCity
    */
   class Plaza {
 

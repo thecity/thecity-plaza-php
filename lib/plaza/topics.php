@@ -1,20 +1,20 @@
 <?php
 
   /** 
-  * Project:    OnTheCity API 
-  * File:       topics.php
+   * Project:    Plaza-PHP
+   * File:       topics.php
    *
-   * @author Wes Hays <weshays@gbdev.com> 
-   * @link https://github.com/weshays/onthecity-api-php
-   * @version 1.0a
-   * @package OnTheCity
+   * @author Wes Hays <wes@onthecity.org> 
+   * @link https://github.com/thecity/plaza-php
+   * @version 0.1
+   * @package TheCity
    */
 
 
   /** 
    * This class is a wrapper for the topics page.
    *
-   * @package OnTheCity
+   * @package TheCity
    */
   class Topics extends Plaza {
 
@@ -40,7 +40,7 @@
      */
     public function all_titles() {
       $topics = array();
-      foreach ($this->json_data as $topic) { $topics[] = $topic->title; }
+      foreach ($this->json_data as $topic) { $topics[] = $topic->global_topic->title; }
       return $topics;
     }
     
@@ -53,7 +53,7 @@
      * @return Topic
      */
     public function get_topic($index) {
-      return new Topic( $this->json_data[$index] );      
+      return new Topic( $this->json_data[$index]->global_topic );      
     }
     
   }

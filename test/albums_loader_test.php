@@ -5,8 +5,8 @@
   /** 
    * These are the tests for the AlbumsLoader class.
    *
-   * @package OnTheCity
-   * @author Wes Hays <weshays@gbdev.com>
+   * @package TheCity
+   * @author Wes Hays <wes@onthecity.com>
    */
    
    class TestAlbumsLoader extends UnitTestCase {

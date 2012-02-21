@@ -1,20 +1,20 @@
 <?php
 
   /** 
-  * Project:    OnTheCity API 
-  * File:       events.php
+   * Project:    Plaza-PHP
+   * File:       events.php
    *
-   * @author Wes Hays <weshays@gbdev.com> 
-   * @link https://github.com/weshays/onthecity-api-php
-   * @version 1.0a
-   * @package OnTheCity
+   * @author Wes Hays <wes@onthecity.org> 
+   * @link https://github.com/thecity/plaza-php
+   * @version 0.1
+   * @package TheCity
    */
 
 
   /** 
    * This class is a wrapper for the events page.
    *
-   * @package OnTheCity
+   * @package TheCity
    */
   class Events extends Plaza {
 
@@ -40,7 +40,7 @@
      */
     public function all_titles() {
       $events = array();
-      foreach ($this->json_data as $event) { $events[] = $event->title; }
+      foreach ($this->json_data as $event) { $events[] = $event->global_event->title; }
       return $events;
     }
     
@@ -53,7 +53,7 @@
      * @return Event
      */
     public function get_event($index) {
-      return new Event( $this->json_data[$index] );
+      return new Event( $this->json_data[$index]->global_events );
     }
   }
 ?>
