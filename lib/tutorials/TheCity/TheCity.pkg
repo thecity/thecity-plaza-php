@@ -1,7 +1,7 @@
 <refentry id="{@id}">
  
  <refnamediv>
-  <refname>User Guide for the OnTheCity PHP Library</refname>
+  <refname>User Guide for the TheCity PHP Library</refname>
  </refnamediv>
  
  <refsynopsisdiv>
@@ -11,7 +11,7 @@
     {@link http://www.weshays.com Wes Hays}
    </authorblurb>
    <authorblurb>
-    weshays at gbdev dot com
+    weshays at onthecity dot org
    </authorblurb>
   </author>
  </refsynopsisdiv>
@@ -21,13 +21,13 @@
  <refsect1 id="{@id intro}">
   <title>Introduction</title>
   <para>
-   This PHP library is meant to be used with OnTheCity (Software to enable communication and community in your church).
+   This PHP library is meant to be used with The City (Software to enable communication and community in your church).
   </para>
   <para>
    It is possible to pull church needs, topics, events, prayers and albums from the Plaza so that you can use them as necessary. 
   </para>
   <para>
-   Data pulled from TheCity is by default cached for 1 day (24 hours) so that subsequent requests are faster.  
+   Data pulled from The City is by default cached for 1 hour so that subsequent requests are faster.  
   </para>
  </refsect1>
  
