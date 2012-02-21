@@ -7,7 +7,7 @@
    * @author Wes Hays <wes@onthecity.com>
    */
 
-  require_once(dirname(__FILE__) . '/../lib/on_the_city.php');
+  require_once(dirname(__FILE__) . '/../lib/the_city.php');
   
   require_once('simpletest/autorun.php');
 
