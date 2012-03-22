@@ -73,18 +73,18 @@
       return $this->topics;
     }
     
-    
+
     /**
-     * Shows all the needs posted on the Plaza.
+     * Shows all the events posted on the Plaza.
      *
-     * @return array of all the needs posted on the Plaza.
+     * @return array of all the events posted on the Plaza.
      */
-    public function needs() {
-      if( !is_null($this->needs) ) { return $this->needs; }
-      $loader = new NeedsLoader( $this->subdomain, $this->cacher );
-      $this->needs = new Needs( $loader );
-      return $this->needs;
-    }
+    public function events() {
+      if( !is_null($this->events) ) { return $this->events; }
+      $loader = new EventsLoader( $this->subdomain, $this->cacher );
+      $this->events = new Events( $loader );
+      return $this->events;
+    }    
  
     
     /**
@@ -99,17 +99,29 @@
       return $this->prayers;
     }
     
+    /**
+     * Shows all the needs posted on the Plaza.
+     *
+     * @return array of all the needs posted on the Plaza.
+     */
+    public function needs() {
+      if( !is_null($this->needs) ) { return $this->needs; }
+      $loader = new NeedsLoader( $this->subdomain, $this->cacher );
+      $this->needs = new Needs( $loader );
+      return $this->needs;
+    }
     
+
     /**
      * Shows all the events posted on the Plaza.
      *
      * @return array of all the events posted on the Plaza.
      */
-    public function events() {
-      if( !is_null($this->events) ) { return $this->events; }
-      $loader = new EventsLoader( $this->subdomain, $this->cacher );
-      $this->events = new Events( $loader );
-      return $this->events;
+    public function albums() {
+      if( !is_null($this->albums) ) { return $this->albums; }
+      $loader = new AlbumsLoader( $this->subdomain, $this->cacher );
+      $this->albums = new Albums( $loader );
+      return $this->albums;
     }
     
 
