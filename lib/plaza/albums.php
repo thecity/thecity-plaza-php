@@ -52,7 +52,7 @@
      * @return Album
      */
     public function select($index) {
-      return new Album( $this->json_data[$index]->global_albums );
+      return new Album( $this->json_data[$index]->global_album );
     }
     
   }

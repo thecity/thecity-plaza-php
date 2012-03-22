@@ -53,7 +53,7 @@
      * @return Need
      */
     public function select($index) {
-      return new Need( $this->json_data[$index]->global_needs );
+      return new Need( $this->json_data[$index]->global_need );
     }
     
   }

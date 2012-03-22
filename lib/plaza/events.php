@@ -53,7 +53,7 @@
      * @return Event
      */
     public function select($index) {
-      return new Event( $this->json_data[$index]->global_events );
+      return new Event( $this->json_data[$index]->global_event );
     }
   }
 ?>
