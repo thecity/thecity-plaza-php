@@ -29,6 +29,14 @@
     
     
     /**
+     * @return The id of this need.     
+     */
+    public function id() { 
+      return isset($this->data->nuid) ? $this->data->nuid : '';
+    }
+
+    
+    /**
      * @return The responses to the need.
      */
     public function posts() {      

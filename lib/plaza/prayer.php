@@ -16,7 +16,7 @@
    *
    * @package TheCity
    */
-  class Prayer extends Plaza {
+  class Prayer extends PlazaCommon {
 
     /**
      * Constructor.
@@ -27,6 +27,14 @@
       parent::__construct($data);
     }
     
+
+    /**
+     * @return The id of this prayer.     
+     */
+    public function id() { 
+      return isset($this->data->puid) ? $this->data->puid : '';
+    }
+
     
     /**
      * @return The responses to the prayer.

@@ -34,14 +34,6 @@
     
     
     /**
-     * @return The id of this plaza item.     
-     */
-    public function id() { 
-      return $this->data->nuid;
-    }
-
-    
-    /**
      * @return The title of this plaza item.
      */
     public function title() { 

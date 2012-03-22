@@ -26,6 +26,14 @@
     public function __construct($data) {
       parent::__construct($data);
     }
+
+
+    /**
+     * @return The id of this album.     
+     */
+    public function id() { 
+      return isset($this->data->tuid) ? $this->data->tuid : '';
+    }    
     
     
     /**

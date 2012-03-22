@@ -26,6 +26,14 @@
     public function __construct($data) {
       parent::__construct($data);
     }
+
+
+    /**
+     * @return The id of this event.     
+     */
+    public function id() { 
+      return isset($this->data->euid) ? $this->data->euid : '';
+    }
     
     
     /**
