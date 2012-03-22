@@ -52,7 +52,7 @@
      *
      * @return Topic
      */
-    public function get_topic($index) {
+    public function select($index) {
       return new Topic( $this->json_data[$index]->global_topic );      
     }
     

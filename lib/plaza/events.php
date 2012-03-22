@@ -52,7 +52,7 @@
      *
      * @return Event
      */
-    public function get_event($index) {
+    public function select($index) {
       return new Event( $this->json_data[$index]->global_events );
     }
   }

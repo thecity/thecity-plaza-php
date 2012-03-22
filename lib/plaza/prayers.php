@@ -52,7 +52,7 @@
      *
      * @return Prayer
      */
-    public function get_prayer($index) {
+    public function select($index) {
       return new Prayer( $this->json_data[$index]->global_prayers );
     }
     
