@@ -25,9 +25,9 @@ Clone, fork or download the package.
 
 === Basic usage
 
-  require_once 'lib/on_the_city.php';
-  $on_the_city = new OnTheCity('mychurch');
-  $topics = $on_the_city->topics();
+  require_once 'lib/the_city.php';
+  $the_city = new TheCity('mychurch');
+  $topics = $the_city->topics();
   
 
 == WordPress
