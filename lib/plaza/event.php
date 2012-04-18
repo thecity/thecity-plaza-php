@@ -35,6 +35,21 @@
       return isset($this->data->euid) ? $this->data->euid : '';
     }
     
+
+    /**
+     * @return When this event starts.
+     */
+    public function starting_at() { 
+      return $this->data->starting_at;
+    }
+
+
+    /**
+     * @return When this event ends.
+     */
+    public function ending_at() { 
+      return $this->data->ending_at;
+    }
     
     /**
      * @return The responses to the event.
