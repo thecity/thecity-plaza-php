@@ -66,6 +66,18 @@
 
       return true;
     } 
+
+
+    /**
+     * Get the file name where the cache is stored.
+     *
+     * @param string $key The key used for the cache.
+     *
+     * @return muxed Returns the name of the cache file if found or false.
+     */
+    public function get_cache_file($key) {      
+      return $this->find_file_key($key);
+    }
     
     
 
