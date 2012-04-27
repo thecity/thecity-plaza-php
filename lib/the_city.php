@@ -87,7 +87,7 @@
      * @return array of all the topics posted on the Plaza.
      */
     public function topics($num_per_page = 10) {
-      if( $this->topics_num_requested == $num_per_page and !is_null($this->topics) ) { return $this->topics; }
+      if( $this->topics_num_requested == $num_per_page && !is_null($this->topics) ) { return $this->topics; }
       $this->topics_num_requested = $num_per_page;
       $loader = new TopicsLoader( $this->subdomain, $num_per_page, $this->cacher );
       $this->topics = new Topics( $loader );
@@ -103,7 +103,7 @@
      * @return array of all the events posted on the Plaza.
      */
     public function events($num_per_page = 10) {
-      if( $this->events_num_requested == $num_per_page and !is_null($this->events) ) { return $this->events; }
+      if( $this->events_num_requested == $num_per_page && !is_null($this->events) ) { return $this->events; }
       $this->events_num_requested = $num_per_page;
       $loader = new EventsLoader( $this->subdomain, $num_per_page, $this->cacher );
       $this->events = new Events( $loader );
@@ -119,7 +119,7 @@
      * @return array of all the prayers posted on the Plaza.
      */
     public function prayers($num_per_page = 10) {
-      if( $this->prayers_num_requested == $num_per_page and !is_null($this->prayers) ) { return $this->prayers; }
+      if( $this->prayers_num_requested == $num_per_page && !is_null($this->prayers) ) { return $this->prayers; }
       $this->prayers_num_requested = $num_per_page;
       $loader = new PrayersLoader( $this->subdomain, $num_per_page, $this->cacher );
       $this->prayers = new Prayers( $loader );
@@ -134,7 +134,7 @@
      * @return array of all the needs posted on the Plaza.
      */
     public function needs($num_per_page = 10) {
-      if( $this->needs_num_requested == $num_per_page and !is_null($this->needs) ) { return $this->needs; }
+      if( $this->needs_num_requested == $num_per_page && !is_null($this->needs) ) { return $this->needs; }
       $this->needs_num_requested = $num_per_page;
       $loader = new NeedsLoader( $this->subdomain, $num_per_page, $this->cacher );
       $this->needs = new Needs( $loader );
@@ -150,7 +150,7 @@
      * @return array of all the events posted on the Plaza.
      */
     public function albums($num_per_page = 10) {
-      if( $this->albums_num_requested == $num_per_page and !is_null($this->albums) ) { return $this->albums; }
+      if( $this->albums_num_requested == $num_per_page && !is_null($this->albums) ) { return $this->albums; }
       $this->albums_num_requested = $num_per_page;
       $loader = new AlbumsLoader( $this->subdomain, $num_per_page, $this->cacher );
       $this->albums = new Albums( $loader );

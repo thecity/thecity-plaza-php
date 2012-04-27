@@ -26,9 +26,6 @@
     // The object to store and load the cache.
     private $cacher;
 
-    // The number of needs to get.
-    private $number_per_page;
-
     /**
      *  Constructor.
      *
