@@ -52,6 +52,7 @@
      * @return Album
      */
     public function select($index) {
+      if( !isset($this->json_data[$index]) ) { return null; }
       return new Album( $this->json_data[$index]->global_album );
     }
     

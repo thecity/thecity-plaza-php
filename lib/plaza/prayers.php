@@ -53,6 +53,7 @@
      * @return Prayer
      */
     public function select($index) {
+      if( !isset($this->json_data[$index]) ) { return null; }
       return new Prayer( $this->json_data[$index]->global_prayer );
     }
     

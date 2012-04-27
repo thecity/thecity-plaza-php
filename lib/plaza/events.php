@@ -53,6 +53,7 @@
      * @return Event
      */
     public function select($index) {
+      if( !isset($this->json_data[$index]) ) { return null; }
       return new Event( $this->json_data[$index]->global_event );
     }
   }

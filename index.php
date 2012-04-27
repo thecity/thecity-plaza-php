@@ -8,8 +8,6 @@
  ******************************************* */
 
 require_once 'lib/the_city.php';
-  
-  $the_city = new TheCity('livingstones', true);
 
 //## Initalize
 
