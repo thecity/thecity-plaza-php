@@ -25,6 +25,12 @@
     public function __construct() {
       // Do nothing
     }
+
+
+    /**
+     *  Alias for all_titles
+     */
+    public function titles() { return $this->all_titles(); }    
     
   }
 ?>
