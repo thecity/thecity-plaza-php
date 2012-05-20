@@ -29,6 +29,9 @@ $topics = $the_city->topics(3);
 // Get topic.
 $topic = $topics->select(2);
 
+// Get count.
+$topic_count = $topics->size();
+
 
 //## Load Events
 $array_of_event_titles = $the_city->events()->titles();
@@ -41,6 +44,9 @@ $events = $the_city->events(3);
 
 // Get event.
 $event = $events->select(2);
+
+// Get count.
+$event_count = $events->size();
 
 
 //## Load Prayers
@@ -55,6 +61,9 @@ $rayers = $the_city->prayers(3);
 // Get prayer
 $prayer = $prayers->select(2);
 
+// Get count.
+$prayer_count = $prayers->size();
+
 
 //## Load Needs
 $array_of_need_titles = $the_city->prayers()->titles();
@@ -68,6 +77,10 @@ $needs = $the_city->needs(3);
 // Get needs
 $need = $needs->select(2);
 
+// Get count.
+$need_count = $needs->size();
+
+
 //## Albums
 $array_of_album_titles = $the_city->albums()->titles();
 
@@ -79,6 +92,9 @@ $albums = $the_city->albums(3);
 
 // Get event
 $album = $albums->select(2);
+
+// Get count.
+$album_count = $albums->size();
 
 
 

@@ -18,10 +18,6 @@
    */
   class Events extends Plaza {
 
-    // Holds the data
-    private $json_data = '';
-
-
     /**
      *  Constructor.
      *

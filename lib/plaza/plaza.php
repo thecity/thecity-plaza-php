@@ -19,6 +19,9 @@
    */
   class Plaza {
 
+    // Holds the data
+    protected $json_data = '';    
+
     /**
      *  Generic constructor.
      */
@@ -32,5 +35,25 @@
      */
     public function titles() { return $this->all_titles(); }    
     
+
+    /**
+     * Get the number of items present.
+     *
+     * @return integer The number of items present.
+     */
+    public function size() { return count($this->json_data); }
+    
+
+    /**
+     * Alias for size.
+     */    
+    public function length() { return $this->size(); }
+
+
+    /**
+     * Alias for size.
+     */       
+    public function count() { return $this->size(); }
+
   }
 ?>
