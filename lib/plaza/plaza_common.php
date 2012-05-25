@@ -47,6 +47,14 @@
     public function created_at() { 
       return $this->data->created_at;
     }
+    
+    
+    /**
+     * @return When this plaza item was last updated.
+     */
+    public function updated_at() { 
+      return $this->data->updated_at;
+    }
 
 
     /**
