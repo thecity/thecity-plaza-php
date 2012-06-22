@@ -2,11 +2,11 @@
 
   /** 
    * Project:    Plaza-PHP
-   * File:       topics.php
+   * File:       the_city.php
    *
    * @author Wes Hays <wes@onthecity.org> 
-   * @link https://github.com/thecity/plaza-php
-   * @version 0.1
+   * @link https://github.com/thecity/thecity-plaza-php
+   * @version 1.0a
    * @package TheCity
    */
    
@@ -88,9 +88,6 @@
      * @param string nickname
      */
     public function set_group_nickname($nickname) {
-      $nickname = strip_tags($nickname);
-      $nickname = strtolower($nickname);
-      $nickname = trim($nickname);
       $this->group_nickname = $nickname;
     }
     

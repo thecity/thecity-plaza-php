@@ -5,8 +5,7 @@
    * File:       albums_loader.php
    *
    * @author Wes Hays <wes@onthecity.org> 
-   * @link https://github.com/thecity/plaza-php
-   * @version 0.1
+   * @link https://github.com/thecity/thecity-plaza-php
    * @package TheCity
    */
 
@@ -35,11 +34,12 @@
      * @param string $group_nickname (optional) The group to get plaza items for.
      */
     public function __construct($subdomain, $num_per_page = 10, $cacher = null, $group_nickname = null) {
-      $group_nickname_key = $group_nickname == null ? '' : $group_nickname;
-      $nickname = $group_nickname == null ? '' : $group_nickname.'/';
-      $this->url = "http://$subdomain.onthecity.org/plaza$nickname/albums?format=json&per_page=$num_per_page";   
-      $this->class_key .= "_$num_per_page_$group_nickname_key"; 
-      if( !is_null($cacher) ) { $this->cacher = $cacher; }        
+      parent::__construct();
+      $group_nickname = $this->clean_group_nickname($group_nickname);
+      $nickname = empty($group_nickname) ? '' : '/'.$group_nickname;
+      $this->url = "http://$subdomain.onthecity.org/plaza$nickname/albums?format=json&per_page=$num_per_page";  
+      $this->class_key .= "_$num_per_page"."_$group_nickname"; 
+      if( !is_null($cacher) ) { $this->cacher = $cacher; }       
     }
     
     

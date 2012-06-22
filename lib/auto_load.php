@@ -5,8 +5,7 @@
    * File:       auto_load.php
    *
    * @author Wes Hays <wes@onthecity.org> 
-   * @link https://github.com/thecity/plaza-php
-   * @version 0.1
+   * @link https://github.com/thecity/thecity-plaza-php
    * @package TheCity
    */
 
