@@ -15,7 +15,7 @@
    *
    * @package TheCity
    */
-  class TopicsLoader {
+  class TopicsLoader extends BaseLoader {
     
     private $class_key = 'topics';
     

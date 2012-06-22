@@ -15,7 +15,7 @@
    *
    * @package TheCity
    */
-  class EventsLoader {
+  class EventsLoader extends BaseLoader {
 
     private $class_key = 'events';
     

@@ -15,7 +15,7 @@
    *
    * @package TheCity
    */
-  class NeedsLoader {
+  class NeedsLoader extends BaseLoader {
 
     private $class_key = 'needs';
     

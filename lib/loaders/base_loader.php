@@ -15,7 +15,7 @@
    *
    * @package TheCity
    */
-  class BaseLoader extends BaseLoader {
+  class BaseLoader {
 
     /**
      *  Generic constructor.
@@ -31,7 +31,7 @@
      * @return string The sanitized group nickname.
      */
     function clean_group_nickname($group_name) {
-      $nickname == null ? '' : $nickname;
+      $nickname = $group_name == null ? '' : $group_name;
       $nickname = strip_tags($nickname);
       $nickname = strtolower($nickname);
       return trim($nickname);      

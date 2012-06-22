@@ -15,7 +15,7 @@
    *
    * @package TheCity
    */
-  class AlbumsLoader {
+  class AlbumsLoader extends BaseLoader {
 
     private $class_key = 'albums';
     

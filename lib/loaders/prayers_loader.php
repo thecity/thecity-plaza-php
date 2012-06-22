@@ -15,7 +15,7 @@
    *
    * @package TheCity
    */
-  class PrayersLoader {
+  class PrayersLoader extends BaseLoader {
 
     private $class_key = 'prayers';
     
