@@ -13,8 +13,11 @@ require_once 'lib/the_city.php';
 
 // First param is your church's subdomain key.
 // Second param is whether or not to cache the data.
-$the_city = new TheCity('livingstones', true);
+$the_city = new TheCity('vintage21', true);
 
+
+// Set group nickname to pull plaza items from.
+$the_city->set_group_nickname('@v21west');
 
 
 //## Load Topics

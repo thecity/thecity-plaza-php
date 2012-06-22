@@ -63,6 +63,9 @@
     private $cacher;
 
 
+    // The group's nickname to reference.
+    private $group_nickname = null;
+
 
     /**
      *  Constructor.
@@ -77,6 +80,19 @@
         $this->cacher = empty($cacher) ? new JsonCache($subdomain) : $cacher;
       }
     }
+
+
+    /**
+     * Se the group nickname and only pull from that groups items.
+     *
+     * @param string nickname
+     */
+    public function set_group_nickname($nickname) {
+      $nickname = strip_tags($nickname);
+      $nickname = strtolower($nickname);
+      $nickname = trim($nickname);
+      $this->group_nickname = $nickname;
+    }
     
     
     /**
@@ -89,7 +105,7 @@
     public function topics($num_per_page = 10) {
       if( $this->topics_num_requested == $num_per_page && !is_null($this->topics) ) { return $this->topics; }
       $this->topics_num_requested = $num_per_page;
-      $loader = new TopicsLoader( $this->subdomain, $num_per_page, $this->cacher );
+      $loader = new TopicsLoader( $this->subdomain, $num_per_page, $this->cacher, $this->group_nickname );
       $this->topics = new Topics( $loader );
       return $this->topics;
     }
@@ -105,7 +121,7 @@
     public function events($num_per_page = 10) {
       if( $this->events_num_requested == $num_per_page && !is_null($this->events) ) { return $this->events; }
       $this->events_num_requested = $num_per_page;
-      $loader = new EventsLoader( $this->subdomain, $num_per_page, $this->cacher );
+      $loader = new EventsLoader( $this->subdomain, $num_per_page, $this->cacher, $this->group_nickname );
       $this->events = new Events( $loader );
       return $this->events;
     }    
@@ -121,7 +137,7 @@
     public function prayers($num_per_page = 10) {
       if( $this->prayers_num_requested == $num_per_page && !is_null($this->prayers) ) { return $this->prayers; }
       $this->prayers_num_requested = $num_per_page;
-      $loader = new PrayersLoader( $this->subdomain, $num_per_page, $this->cacher );
+      $loader = new PrayersLoader( $this->subdomain, $num_per_page, $this->cacher, $this->group_nickname );
       $this->prayers = new Prayers( $loader );
       return $this->prayers;
     }
@@ -136,7 +152,7 @@
     public function needs($num_per_page = 10) {
       if( $this->needs_num_requested == $num_per_page && !is_null($this->needs) ) { return $this->needs; }
       $this->needs_num_requested = $num_per_page;
-      $loader = new NeedsLoader( $this->subdomain, $num_per_page, $this->cacher );
+      $loader = new NeedsLoader( $this->subdomain, $num_per_page, $this->cacher, $this->group_nickname );
       $this->needs = new Needs( $loader );
       return $this->needs;
     }
@@ -152,7 +168,7 @@
     public function albums($num_per_page = 10) {
       if( $this->albums_num_requested == $num_per_page && !is_null($this->albums) ) { return $this->albums; }
       $this->albums_num_requested = $num_per_page;
-      $loader = new AlbumsLoader( $this->subdomain, $num_per_page, $this->cacher );
+      $loader = new AlbumsLoader( $this->subdomain, $num_per_page, $this->cacher, $this->group_nickname );
       $this->albums = new Albums( $loader );
       return $this->albums;
     }

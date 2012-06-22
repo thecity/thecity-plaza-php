@@ -32,10 +32,13 @@
      * @param string $subdomain The church subdomain.
      * @param integer $num_per_page The number of items to show.  Max is 15. Default is 10.
      * @param CacheInterface The cacher to be used to cache data.
+     * @param string $group_nickname (optional) The group to get plaza items for.
      */
-    public function __construct($subdomain, $num_per_page = 10, $cacher = null) {
-      $this->url = "http://$subdomain.onthecity.org/plaza/topics.json?per_page=$num_per_page";   
-      $this->class_key .= "_$num_per_page"; 
+    public function __construct($subdomain, $num_per_page = 10, $cacher = null, $group_nickname = null) {
+      $group_nickname_key = $group_nickname == null ? '' : $group_nickname;
+      $nickname = $group_nickname == null ? '' : $group_nickname.'/';
+      $this->url = "http://$subdomain.onthecity.org/plaza$nickname/topics?format=json&per_page=$num_per_page";   
+      $this->class_key .= "_$num_per_page_$group_nickname_key"; 
       if( !is_null($cacher) ) { $this->cacher = $cacher; }  
     }
     
