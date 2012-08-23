@@ -58,6 +58,8 @@
     // The last number of topics requested.
     private $topics_num_requested = 0;
 
+    // Paramters that may be used by the system now or in the future.
+    private $other_url_params = '';
 
     // The object to store and load the cache.
     private $cacher;
@@ -81,6 +83,16 @@
       }
     }
 
+
+    /**
+     * Adds additional url params to be sent to the server.  These may be used by the system
+     * now or in the future.
+     *
+     * @param string $url_params The additional params to send to the server.
+     */
+    public function add_url_params($url_params) {
+      $this->other_url_params = $url_params;
+    }
 
     /**
      * Se the group nickname and only pull from that groups items.
