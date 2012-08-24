@@ -69,7 +69,7 @@
 
       $url_to_use = $this->url;
       if( !empty($this->other_url_params) ) {
-        $url_to_use .= '&'.$this->other_url_params;
+        $url_to_use = $this->url .'&'.$this->other_url_params;
       }
 
       $json = file_get_contents($url_to_use); 
