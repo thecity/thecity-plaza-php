@@ -115,6 +115,7 @@
       if( $this->topics_num_requested == $num_per_page && !is_null($this->topics) ) { return $this->topics; }
       $this->topics_num_requested = $num_per_page;
       $loader = new TopicsLoader( $this->subdomain, $num_per_page, $this->cacher, $this->group_nickname );
+      $loader->add_url_params($this->other_url_params);
       $this->topics = new Topics( $loader );
       return $this->topics;
     }
@@ -131,6 +132,7 @@
       if( $this->events_num_requested == $num_per_page && !is_null($this->events) ) { return $this->events; }
       $this->events_num_requested = $num_per_page;
       $loader = new EventsLoader( $this->subdomain, $num_per_page, $this->cacher, $this->group_nickname );
+      $loader->add_url_params($this->other_url_params);
       $this->events = new Events( $loader );
       return $this->events;
     }    
@@ -147,6 +149,7 @@
       if( $this->prayers_num_requested == $num_per_page && !is_null($this->prayers) ) { return $this->prayers; }
       $this->prayers_num_requested = $num_per_page;
       $loader = new PrayersLoader( $this->subdomain, $num_per_page, $this->cacher, $this->group_nickname );
+      $loader->add_url_params($this->other_url_params);
       $this->prayers = new Prayers( $loader );
       return $this->prayers;
     }
@@ -162,6 +165,7 @@
       if( $this->needs_num_requested == $num_per_page && !is_null($this->needs) ) { return $this->needs; }
       $this->needs_num_requested = $num_per_page;
       $loader = new NeedsLoader( $this->subdomain, $num_per_page, $this->cacher, $this->group_nickname );
+      $loader->add_url_params($this->other_url_params);
       $this->needs = new Needs( $loader );
       return $this->needs;
     }
@@ -178,6 +182,7 @@
       if( $this->albums_num_requested == $num_per_page && !is_null($this->albums) ) { return $this->albums; }
       $this->albums_num_requested = $num_per_page;
       $loader = new AlbumsLoader( $this->subdomain, $num_per_page, $this->cacher, $this->group_nickname );
+      $loader->add_url_params($this->other_url_params);
       $this->albums = new Albums( $loader );
       return $this->albums;
     }

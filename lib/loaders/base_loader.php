@@ -17,6 +17,14 @@
    */
   class BaseLoader {
 
+    public $class_key = 'NOT_SET';
+    
+    // The URL to load the albumns from.
+    public $url = '';
+    
+    // The object to store and load the cache.
+    public $cacher;
+
     /**
      *  Generic constructor.
      */
@@ -47,6 +55,32 @@
     public function add_url_params($url_params) {
       $this->other_url_params = $url_params;
     }    
+
+
+    /**
+     *  Loads all the prayers on the Plaza for the subdomain.
+     *
+     * @return JSON The data loaded in a JSON object.
+     */  
+    public function load_feed() {      
+      if( !is_null($this->cacher) && !$this->cacher->is_cache_expired( $this->class_key ))  { 
+        return $this->cacher->get_data( $this->class_key ); 
+      }
+
+      $url_to_use = $this->url;
+      if( !empty($this->other_url_params) ) {
+        $url_to_use .= '&'.$this->other_url_params;
+      }
+
+      $json = file_get_contents($url_to_use); 
+      $data = json_decode($json);    
+     
+      if( !is_null($this->cacher) ) { 
+        $this->cacher->save_data($this->class_key, $data);
+      }      
+
+      return $data;
+    }      
 
   }
 
