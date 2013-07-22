@@ -62,17 +62,24 @@
      *
      * @return JSON The data loaded in a JSON object.
      */  
-    public function load_feed() {      
+    public function load_feed() {     
       if( !is_null($this->cacher) && !$this->cacher->is_cache_expired( $this->class_key ))  { 
         return $this->cacher->get_data( $this->class_key ); 
       }
-
+   
       $url_to_use = $this->url;
       if( !empty($this->other_url_params) ) {
         $url_to_use = $this->url .'&'.$this->other_url_params;
       }
 
-      $json = file_get_contents($url_to_use); 
+      $json = '{}';
+      if( ini_get('allow_url_fopen') == 1 ) { // On     
+        $json = $this->_load_data_using_file_get_contents($url_to_use); 
+      } else if( function_exists('curl_version') ) {     
+        $json = $this->_load_data_using_curl($url_to_use); 
+      } else {
+        throw new Exception('Cannot pull data from plaza.  Either enable allow_url_fopen in the php.ini file, or install curl for php.');
+      }
       $data = json_decode($json);    
      
       if( !is_null($this->cacher) ) { 
@@ -81,6 +88,22 @@
 
       return $data;
     }      
+
+    private function _load_data_using_file_get_contents($url) {
+      return file_get_contents($url); 
+    }
+
+    private function _load_data_using_curl($url) {
+      $ch = curl_init();
+       
+      curl_setopt($ch, CURLOPT_HEADER, 0);
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); //Set curl to return the data instead of printing it to the browser.
+      curl_setopt($ch, CURLOPT_URL, $url);
+       
+      $data = curl_exec($ch);
+      curl_close($ch);
+      return $data;      
+    }    
 
   }
 
