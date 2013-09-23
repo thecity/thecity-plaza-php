@@ -73,10 +73,10 @@
       }
 
       $json = '{}';
-      if( ini_get('allow_url_fopen') == 1 ) { // On     
-        $json = $this->_load_data_using_file_get_contents($url_to_use); 
-      } else if( function_exists('curl_version') ) {     
+      if( function_exists('curl_version') ) {     
         $json = $this->_load_data_using_curl($url_to_use); 
+      } else if( ini_get('allow_url_fopen') == 1 ) { // On     
+        $json = $this->_load_data_using_file_get_contents($url_to_use);         
       } else {
         throw new Exception('Cannot pull data from plaza.  Either enable allow_url_fopen in the php.ini file, or install curl for php.');
       }
