@@ -6,7 +6,7 @@
    *
    * @author Wes Hays <wes@onthecity.org> 
    * @link https://github.com/thecity/thecity-plaza-php
-   * @version 1.0a
+   * @version 1.0b
    * @package TheCity
    */
    
