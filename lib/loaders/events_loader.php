@@ -30,7 +30,7 @@
       $group_nickname = $this->clean_group_nickname($group_nickname);
       $this->class_key = implode('_', array('events', $num_per_page, $group_nickname));
       $nickname = empty($group_nickname) ? '' : '/'.$group_nickname;
-      $this->url = "http://$subdomain.onthecity.org/plaza$nickname/events?format=json&per_page=$num_per_page"; 
+      $this->url = "https://$subdomain.onthecity.org/plaza$nickname/events?format=json&per_page=$num_per_page"; 
       if( !is_null($cacher) ) { $this->cacher = $cacher; }  
     }
     
